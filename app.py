@@ -14,6 +14,9 @@ def send_telegram(msg):
         "text": msg
     }
     requests.post(url, data=payload)
+@app.route('/')
+def home():
+    return "TradingView Telegram Webhook Running"
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
